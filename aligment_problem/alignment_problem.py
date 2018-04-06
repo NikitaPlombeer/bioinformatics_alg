@@ -126,8 +126,10 @@ for idx, letter in enumerate(lines[0].split()):
 for line in lines[1:]:
     scoring_matrix.append(map(int, line.split()[1:]))
 
-v = raw_input().strip()
-w = raw_input().strip()
+file = open("input.txt", "r")
+
+v = file.readline().strip()
+w = file.readline().strip()
 
 cs = common_substring(v, w)
 print(cs)
