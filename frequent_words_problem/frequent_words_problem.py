@@ -1,5 +1,7 @@
-string = raw_input()
-k = int(raw_input())
+file = open("input.txt", "r")
+
+string = file.readline().strip()
+k = int(file.readline().strip())
 
 max = 0
 d = {}

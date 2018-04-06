@@ -15,8 +15,10 @@ def count_min_number_of_coins(denoms, summa):
     return arr[summa]
 
 
-value = int(raw_input())
-denominations = map(int, raw_input().split(","))
+file = open("input.txt", "r")
+
+value = int(file.readline())
+denominations = map(int, file.readline().strip().split(","))
 
 min_number = count_min_number_of_coins(denominations, value)
 print(min_number)

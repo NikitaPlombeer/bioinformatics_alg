@@ -14,7 +14,9 @@ def distance_func(sw, ew, n, m):
     return arr[n][m]
 
 
-numbers = map(int, raw_input().split())
+file = open("input.txt", "r")
+
+numbers = map(int, file.readline().split())
 n = numbers[0]
 m = numbers[1]
 
@@ -22,12 +24,12 @@ southern_weights = []
 east_weights = []
 
 for i in range(n):
-    southern_weights.append(map(int, raw_input().split()))
+    southern_weights.append(map(int, file.readline().strip().split()))
 
-raw_input()  # -
+file.readline()
 
 for i in range(n + 1):
-    east_weights.append(map(int, raw_input().split()))
+    east_weights.append(map(int, file.readline().strip().split()))
 
 distance = distance_func(southern_weights, east_weights, n, m)
 print(distance)

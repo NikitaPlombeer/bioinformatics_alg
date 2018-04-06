@@ -72,13 +72,17 @@ def branch_and_bound_motif_search(dnk_list, t, n, l):
     return best_word
 
 
-numbers = map(int, raw_input().split())
+file = open("input.txt", "r")
+numbers = map(int, file.readline().split())
+
 l = numbers[0]
 t = numbers[1]
 
-dnk_list = []
-for i in range(t):
-    dnk_list.append(raw_input())
+dnk_list = file.readlines()
+
+for idx, dnk in enumerate(dnk_list):
+    dnk_list[idx] = dnk.strip()
+
 n = len(dnk_list[0])
 
 best = branch_and_bound_motif_search(dnk_list, t, n - l + 1, l)

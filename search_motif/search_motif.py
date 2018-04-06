@@ -1,10 +1,12 @@
-numbers = map(int, raw_input().split())
+file = open("input.txt", "r")
+numbers = map(int, file.readline().split())
+
 l = numbers[0]
 t = numbers[1]
 
 dnk_list = []
 for i in range(t):
-    dnk_list.append(raw_input())
+    dnk_list.append(file.readline())
 n = len(dnk_list[0])
 p = n - l
 
@@ -37,11 +39,9 @@ for u in range(pow(p, t)):
             if max < count:
                 max = count
         score += max
-    print("Score for " + str(s) + " = " + str(score))
     if bestScore <= score:
         bestScore = score
         best = s[:]
 
-print (best)
 for i in range(len(dnk_list)):
     print(dnk_list[i][best[i]:best[i] + l])

@@ -55,8 +55,10 @@ def common_substring(v, w):
 
     return make_word(v, directions, n, m)
 
-v = raw_input().strip()
-w = raw_input().strip()
+file = open("input.txt", "r")
+
+v = file.readline().strip()
+w = file.readline().strip()
 
 cs = common_substring(v, w)
 print(cs)
