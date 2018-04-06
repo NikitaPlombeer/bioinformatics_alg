@@ -5,9 +5,6 @@ direction_map = {'UP': '↑', 'LEFT': '←', 'DIAG': '↖'}
 letters = {}
 scoring_matrix = []
 
-file = open("BLOSUM62.txt", "r")
-
-
 def razruli(v, w, i, j, s):
     direction = direction_map['UP']
     b_max = s[i - 1][j] - 5
@@ -113,6 +110,7 @@ def common_substring(v, w):
     #         res = res + " " + directions[i - 1][j - 1]
     #     print(res)
 
+    print(s[n - 1][m - 1])
     print(make_word(v, w, directions, n, m, True))
     print(make_word(v, w, directions, n, m, False))
 
