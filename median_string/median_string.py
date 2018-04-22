@@ -28,7 +28,7 @@ for u in range(pow(p, t)):
     total = 0
     for line in dnk_list:
         min_h = sys.maxint
-        for i in range(n - l):
+        for i in range(n - l + 1):
             h = 0
             for j in range(l):
                 if line[i + j] != decode[word[j]]:
